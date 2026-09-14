@@ -11,6 +11,7 @@ import json
 import random
 import re
 import time
+import shutil
 from collections import Counter
 from collections.abc import Iterable, Iterator
 from dataclasses import dataclass
@@ -90,6 +91,7 @@ class GenePair:
     :param ncbi_gene_id: the NCBI Gene identifier for the approved gene
     :param hgnc_id: the HGNC identifier for the approved gene
     :param ensembl_gene_id: the Ensembl gene identifier for the approved gene
+    :param omim_id: the optional OMIM identifier for the approved gene
     """
 
     alias: str
@@ -97,6 +99,7 @@ class GenePair:
     ncbi_gene_id: str
     hgnc_id: str
     ensembl_gene_id: str
+    omim_id: str | None = None
 
     @property
     def alias_prefix(self) -> str:
@@ -228,11 +231,11 @@ def make_identifier_patterns(
     """Create regular expression patterns for accepted gene identifiers.
 
     :param pair: the alias-gene pair containing the identifiers to match
-    return: a dictionary that maps each identifier namespace to its compiled pattern
+    :return: a dictionary mapping identifier namespaces to compiled patterns
     """
     hgnc_number = pair.hgnc_id.split(":")[-1]
 
-    return {
+    patterns = {
         "NCBI Gene": re.compile(
             rf"\b(?:NCBI\s+Gene|Entrez\s+Gene|Gene\s+ID)"
             rf"\s*[:#]?\s*{re.escape(pair.ncbi_gene_id)}\b",
@@ -247,6 +250,18 @@ def make_identifier_patterns(
             re.IGNORECASE,
         ),
     }
+
+    if pair.omim_id is not None:
+        omim_number = pair.omim_id.split(":")[-1]
+
+        patterns["OMIM"] = re.compile(
+            rf"\b(?:OMIM|MIM)"
+            rf"\s*(?:number|no\.?)?\s*[:#]?\s*"
+            rf"{re.escape(omim_number)}\b",
+            re.IGNORECASE,
+        )
+
+    return patterns
 
 def extract_pmids(obj: JSONValue) -> set[str]:
     """Recursively extract valid PubMed identifiers from a nested object.
@@ -474,6 +489,37 @@ def search_all_pmids_checkpointed(
 
     return all_pmids
 
+CACHE_URL = (
+    "https://nch-igm-wagner-lab-public.s3.us-east-2.amazonaws.com/"
+    "genejar/output"
+)
+
+def download_document_cache(
+    gene_pair: GenePair,
+    output_dir: Path = Path("output"),
+) -> Path:
+    """Download and extract the document cache for one gene alias."""
+    cache_name = gene_pair.alias.casefold()
+    pair_dir = output_dir / cache_name
+    cache_dir = pair_dir / "document_cache"
+    zip_path = pair_dir / "document_cache.zip"
+
+    if cache_dir.exists() and any(cache_dir.iterdir()):
+        return cache_dir
+
+    pair_dir.mkdir(parents=True, exist_ok=True)
+
+    try:
+        download_s3(
+            f"{CACHE_URL}/{cache_name}/document_cache.zip",
+            zip_path,
+        )
+        shutil.unpack_archive(zip_path, pair_dir)
+    finally:
+        zip_path.unlink(missing_ok=True)
+
+    return cache_dir
+
 
 def load_or_search_pmids(
     pair: GenePair,
@@ -656,8 +702,6 @@ def analyze_gene_pair(
         candidate_pmids,
         # force_refresh=True,
     ):
-        processed_documents += 1
-
         pmid = str(
             document.get("pmid")
             or document.get("id")
@@ -668,6 +712,25 @@ def analyze_gene_pair(
             continue
 
         passages = document.get("passages", [])
+
+        passage_types = {
+            str(
+                passage.get("infons", {}).get("type", "")
+            )
+            .strip()
+            .casefold()
+            for passage in passages
+        }
+
+        # A full-text document must contain at least one passage beyond the title and abstract.
+        full_text_passage_types = (
+            passage_types - {"", "title", "abstract"}
+        )
+
+        if not full_text_passage_types:
+            continue
+
+        processed_documents += 1
         has_exact_alias_gene_annotation = False
 
         # Check whether PubTator tagged the exact alias as a gene.
@@ -774,7 +837,7 @@ def print_analysis_results(results: dict[str, Any]) -> None:
 
     print(f"Candidate papers for {pair.alias}: {results['candidate_papers']:,}")  # noqa: T201
 
-    print(f"Documents retrieved: {results['processed_documents']:,}")  # noqa: T201
+    print(f"Full-text documents analyzed: {results['processed_documents']:,}")  # noqa: T201
 
     print(  # noqa: T201
         f"Papers where PubTator tagged the exact alias "
@@ -794,10 +857,33 @@ def print_analysis_results(results: dict[str, Any]) -> None:
 
     print("\nCounts by identifier namespace:")  # noqa: T201
 
-    for namespace in ("NCBI Gene", "HGNC", "Ensembl"):
+    namespaces = list(
+        results["papers_by_namespace"]
+    )
+
+    print(  # noqa: T201
+        f"Papers containing an accepted identifier for "
+        f"{pair.approved_symbol}: "
+        f"{results['numerator']:,}"
+    )
+
+    print(  # noqa: T201
+        f"Identifier namespaces searched: "
+        f"{', '.join(namespaces)}"
+    )
+
+    print(  # noqa: T201
+        f"Percentage containing an identifier: "
+        f"{results['percentage']:.2f}%"
+    )
+
+    print("\nCounts by identifier namespace:")  # noqa: T201
+
+    for namespace, pmids in (
+        results["papers_by_namespace"].items()
+    ):
         print(  # noqa: T201
-            f"  {namespace}: "
-            f"{len(results['papers_by_namespace'][namespace]):,} papers"
+            f"  {namespace}: {len(pmids):,} papers"
         )
 
     print("\nIdentifier locations (PMIDs):")  # noqa: T201
