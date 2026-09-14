@@ -648,6 +648,31 @@ ATP7B = fn.GenePair(
     ensembl_gene_id="ENSG00000123191",
     omim_id="606882"
 )
+ABCD1 = fn.GenePair(
+    alias="ABCD1",
+    approved_symbol="ABCD1",
+    ncbi_gene_id="215",
+    hgnc_id="HGNC:61",
+    ensembl_gene_id="ENSG00000101986",
+    omim_id="300371"
+)
+CYP27A1 = fn.GenePair(
+    alias="CYP27A1",
+    approved_symbol="CYP27A1",
+    ncbi_gene_id="1593",
+    hgnc_id="HGNC:2605",
+    ensembl_gene_id="ENSG00000135929",
+    omim_id="213700"
+)
+PLN = fn.GenePair(
+    alias="PLN",
+    approved_symbol="PLN",
+    ncbi_gene_id="5350",
+    hgnc_id="HGNC:9080",
+    ensembl_gene_id="ENSG00000198523",
+    omim_id="172405"
+)
+
 
 GENES = [
     APC,
@@ -673,7 +698,7 @@ GENES = [
     GLA,
     LDLR,
     APOB,
-    MYH7,# stopped here uploading to S3
+    MYH7,
     TNNT2,
     TPM1,
     MYBPC3,
@@ -731,4 +756,7 @@ GENES = [
     VHL,
     WT1,
     ATP7B,
+    ABCD1,
+    CYP27A1,
+    PLN
 ]
