@@ -163,9 +163,9 @@ COL3A1 = fn.GenePair(
 GLA = fn.GenePair(
     alias="GLA",
     approved_symbol="GLA",
-    ncbi_gene_id="1281",
-    hgnc_id="HGNC:2201",
-    ensembl_gene_id="ENSG00000168542",
+    ncbi_gene_id="2717",
+    hgnc_id="HGNC:4296",
+    ensembl_gene_id="ENSG00000102393",
     omim_id="300644"
 )
 LDLR = fn.GenePair(
