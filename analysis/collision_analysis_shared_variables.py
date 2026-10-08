@@ -4,9 +4,6 @@ import pandas as pd
 ROOT_PATH = Path(__file__).resolve().parent.parent
 OUTPUT_PATH = ROOT_PATH / "output"
 
-
-#ROOT_PATH = '/Users/rsaxs014/Desktop/gene-harmony-analysis'
-
 raw_hgnc_df = pd.read_csv(OUTPUT_PATH /"raw_hgnc_df.csv")
 total_raw_gene_record_set_hgnc = set(raw_hgnc_df['HGNC_ID'])
 
