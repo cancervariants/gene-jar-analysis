@@ -19,8 +19,8 @@ Other examples (which are shown in the figure below) include the gene FOLR3, fol
 - HGNC_ID, ENSG_ID, NCBI_ID: the identifier(s) associated with the gene in the databases HUGO Gene Nomenclature Committee, Ensembl, and NCBI Gene
 - primary_gene_symbol: the official gene symbol assigned to the gene by HGNC
 - gene_symbol: the alias symbol 
-- captured_status: if the relationship between the alias symbol and the gene is annotated (from gene-harmony-analysis)
-- captured_category_list: the list of relationship categories the alias symbol and the gene were annotated by (from gene-harmony-analysis)
+- captured_status: if the relationship between the alias symbol and the gene is annotated (from gene-jar-analysis)
+- captured_category_list: the list of relationship categories the alias symbol and the gene were annotated by (from gene-jar-analysis)
 > **Manually annotated**
 - alternate_abbreviation_status: if the alias represents the referenced gene as an alternate abbreviation
 - notes: miscellaneous thoughts I jotted down as I was curating
