@@ -59,6 +59,6 @@ For any feedback, questions, or conversation, please make an issue.
 - Percentage of ambiguous gene symbols in each database resulting from collisions
 
 **data_pruning_multi_level_sankey**
--Creating a subset of data with comparable gene records from HGNC, NCBI Gene, and Ensembl
+- Creating a subset of data with comparable gene records from HGNC, NCBI Gene, and Ensembl
 
 [def]: https://github.com/cancervariants/gene-harmony-analysis/assets/109570522/91425d67-0884-4fbc-83ab-e7cfd8bd57bd
