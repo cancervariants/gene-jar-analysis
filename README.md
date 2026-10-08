@@ -19,7 +19,7 @@ b) Alias-alias collisions are gene symbols that represent an alias of multiple g
 The difficulties associated with resolving ambiguity and ensuring accurate understanding of gene symbols restrict the rate of clinical decision-making and contribute to confusion in gene knowledge aggregation. This curated collection of gene-symbol relationship data will be a foundation for disambiguating gene symbols. To resolve an ambiguous symbol, these relationships would provide the necessary context.
 
 A gene concept with all the gene symbols that represent it:
-![gene_symbol_relationship_graphicASP](https://github.com/user-attachments/assets/c7af96c6-f12b-4b6a-aa16-774111f8c0b7)
+![gene_symbol_relationship_graphicASP](https://github.com/user-attachments/assets/1bd389e3-dd60-4690-a1f3-71bbe6e5868f)
 
 # How can you help?
 
@@ -28,6 +28,8 @@ Contributing information on collisions that you come across will help collect da
 ## Contact Information
 
 For any feedback, questions, or conversation, please make an issue.
+
+# Notebook Contents
 
 **1_alias_primary_collision_analysis**
 - How many ambiguous symbols resulting from alias-primary collisions are in each database (ap_collision_ambiguous_symbol_count_xxxx)
