@@ -40,10 +40,10 @@ For any feedback, questions, or conversation, please make an issue.
 - How many ambiguous symbols resulting from alias-alias collisions are in each database (aa_collision_ambiguous_symbol_count_xxxx)
 - How many genes are involved in alias-alias collisions in each database (aa_record_count_ensg)
 
-** 4_symbol_capture_generation**
+**4_symbol_capture_generation**
 - The workflow for taking information from each relationship category resources and annotating gene symbol aliases
 
-** 5_symbol_capture_analysis** 
+**5_symbol_capture_analysis** 
 - Summary upset plot illustrating how many aliases are annotated by each relationship
 
 **7_ambiguous_symbol_distribution_analysis**
