@@ -1,4 +1,4 @@
-# gene-harmony-analysis
+# gene-jar-analysis
 
 ## Background
 
@@ -12,76 +12,15 @@ a) Alias-primary collisions, which are gene symbols that are used as a primary g
 
 b) Alias-alias collisions are gene symbols that represent an alias of multiple genes. The gene symbol VH is an alias for 35 genes in the NCBI database. 
 
-Out of the 45,646 genes in the HGNC database, 1.40% (637) had alias-primary collisions and 6.82% (3,113) had alias-alias collisions. 
-The Ensembl database, which has 41,068 genes, was found to have alias-primary collisions in 1.65% (678) of genes and alias-alias collisions in 6.16% (2,530) of genes. 
-
-The NCBI database, with 45,390 genes, had 3.72% (1,689) and 13.25% (6,013) of genes with alias-primary and alias-alias collisions respectively, illustrating the prevalence of ambiguity that challenges the aggregation of genomic knowledge. 
-
-The [1_alias_primary_collision_analysis](./analysis/1_alias_primary_collision_analysis.ipynb) and [2_alias_alias_collision_analysis](./analysis/alias-alias_collision_analysis.ipynb) Jupyter notebooks show the analyses to get these values
-
 ![collision_graphic][def]
 
 ## Purpose
 
-The difficulties associated with resolving ambiguity and ensuring accurate understanding of gene symbols restrict the rate of clinical decision-making and contribute to confusion in gene knowledge aggregation. The gene nomenclature system would be most effective if it is unambiguous with a tool to take existing knowledgebase entries as inputs to resolve. 
+The difficulties associated with resolving ambiguity and ensuring accurate understanding of gene symbols restrict the rate of clinical decision-making and contribute to confusion in gene knowledge aggregation. This curated collection of gene-symbol relationship data will be a foundation for disambiguating gene symbols. To resolve an ambiguous symbol, these relationships would provide the necessary context.
 
-This curated collection of gene-symbol relationship data will be a foundation for disambiguating gene symbols.
-A gene concept with all of the gene symbols that represent it:
-![gene_symbol_relationship_graphicASPM](https://github.com/user-attachments/assets/1bd389e3-dd60-4690-a1f3-71bbe6e5868f)
-
-To resolve an amgiuous symbol, these relationships would provide the neccessary context:
+A gene concept with all the gene symbols that represent it:
 ![gene_symbol_relationship_graphicASP](https://github.com/user-attachments/assets/c7af96c6-f12b-4b6a-aa16-774111f8c0b7)
 
-
-# Notebook Dependencies
-|   | Name of Notebook                            | Prerequisite Notebook(s) | Input files                            | Notes  |
-|---|---------------------------------------------|--------------------------|----------------------------------------|---|
-| 1 | alias_primary_collision_analysis            | none                     | ensg_biomart_gene20240626.txt          |   |
-|   |                                             |                          | hgnc_biomart_gene20240626.txt          |   |
-|   |                                             |                          | Homo_sapiens.gene_info20240627         |   |
-| 2 | alias_alias_collision_analysis              | 1                        | none                                   |   |
-| 3 | alias_alias_collision_distribution_analysis | 2, 1                     | none                                   |   |
-| 4 | symbol_capture_generation                   | 1                        | ensg_mart_export_dros_murin_ortho.txt  | takes longer than an hour to run  |
-|   |                                             |                          | ortholog_set_1_df.txt                  |   |
-|   |                                             |                          | …                                      |   |
-|   |                                             |                          | ortholog_set_10_df.txt                 |   |
-| 5 | symbol_capture_analysis                     | 4, 1                     | none                                   | one cell needs to run overnight  |
-| 6 | sqlite_symbol_capture_transformation        | 4, 1                     | ensg_biomart_gene20240626.txt          |   |
-|   |                                             |                          | hgnc_biomart_gene20240626.txt          |   |
-|   |                                             |                          | Homo_sapiens.gene_info20240627         |   |
-|   |                                             |                          | ortholog_set_1_df.txt                  |   |
-|   |                                             |                          | …                                      |   |
-|   |                                             |                          | ortholog_set_10_df.txt                 |   |
-| 7 | ambiguous_symbol_distribution_analysis      | 2, 1                     | none                                   |   |
-| 8 | concordance_via_networkx_analysis           | 6, 4, 1                  | none                                   |   |
-| 9 | concordance_via_upsetplot_analysis          | 6, 4, 1                  | none                                   |   |
-| 10 | dgidb_gene_content_analysis      | 2, 1                     | dgidb_genes_JUNE.tsv                                   |   |
-| 11 | dgidb_query_analysis           | 10, 2, 1                  | log_data.xlsx                                    |   |    
-
-# Notebook Contents
-**1_alias_primary_collision_analysis**
-- How many ambiguous symbols resulting from alias-primary collisions are in each database (xxxx_alias_primary_collision_set)
-- How many genes are involved in alias-primary collisions in each database
-- How many and which genes are involved in alias-primary collisions in all 3 databases (common_ap_collisions)
-- How many genes are involved in alias-primary collisions across all 3 databases
-
-**2_alias_alias_collision_analysis**
-- How many unique gene records are there in each database (xxxx_gene_id_set)
-- How many ambiguous symbols resulting from alias-alias collisions are in each database 
-
-**3_alias_alias_collision_distribution_analysis**
-- How many unique primary gene symbols are in each database (xxxx_gene_symbol_count)
-- How many primary symbols appear in all 3 databases (all_sources_unique_primary_symbol_count)
-- How many unique primary symbols are found between all 3 databases (bw_all_sources_unique_primary_symbol_count)
-- How many unique alias symbols there are per database and across all 3
-- How many alias symbols appear in all 3 databases
-- How many genes are involved in alias-alias collisions in each database
-- How many and which genes are involved in alias-primary collisions in all 3 databases (all_sources_aa_collision_genes)
-- How many genes are involved in alias-alias collisions across all 3 databases
-
-- Per each database: How many genes are the ambiguous gene symbols, resulting from alias-alias collisions, being shared between
-- How many gene concept to symbol relationships there are
-  
 # How can you help?
 
 Contributing information on collisions that you come across will help collect data on the collisions that would be most impactful to resolve as well as increasing the data available for developing resolution strategies for downstream tool development.
@@ -90,5 +29,34 @@ Contributing information on collisions that you come across will help collect da
 
 For any feedback, questions, or conversation, please make an issue.
 
+**1_alias_primary_collision_analysis**
+- How many ambiguous symbols resulting from alias-primary collisions are in each database (ap_collision_ambiguous_symbol_count_xxxx)
+- How many genes are involved in alias-primary collisions in each database (ap_record_count_xxxx)
+- Which ambiguous gene symbols result from alias-primary collisions in all 3 databases (common_ap_collision_ambiguous_symbol_set)
+
+**2_alias_alias_collision_analysis**
+- How many ambiguous symbols resulting from alias-alias collisions are in each database (aa_collision_ambiguous_symbol_count_xxxx)
+- How many genes are involved in alias-alias collisions in each database (aa_record_count_ensg)
+
+** 4_symbol_capture_generation**
+- The workflow for taking information from each relationship category resources and annotating gene symbol aliases
+
+** 5_symbol_capture_analysis** 
+- Summary upset plot illustrating how many aliases are annotated by each relationship
+
+**7_ambiguous_symbol_distribution_analysis**
+- Distribution of ambiguous gene symbols across different sized gene groups per database
+- What is the largest number of records that share one gene symbol?
+- Most ambiguous gene symbols are shared between two gene records
+
+**8_concordance_via_networkx_analysis**
+- Analysis of the cross references between HGNC, NCBI Gene, and Ensmebl
+
+**collision_records_and_ambiguous_symbol_analysis**
+- Percentage of gene records in each database involved in collisions
+- Percentage of ambiguous gene symbols in each database resulting from collisions
+
+**data_pruning_multi_level_sankey**
+-Creating a subset of data with comparable gene records from HGNC, NCBI Gene, and Ensembl
 
 [def]: https://github.com/cancervariants/gene-harmony-analysis/assets/109570522/91425d67-0884-4fbc-83ab-e7cfd8bd57bd
