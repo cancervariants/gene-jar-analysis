@@ -1,0 +1,906 @@
+{
+  "alias": "GLA",
+  "requested_pmids": [
+    "42661427"
+  ],
+  "documents": [
+    {
+      "_id": "42661427|None",
+      "id": "42661427",
+      "infons": {},
+      "passages": [
+        {
+          "infons": {
+            "journal": "Clin Genet;2026Aug27. doi:10.1111/cge.70233",
+            "year": "2026",
+            "type": "title",
+            "authors": "Guyler SK, Maksemous N, Lea RA, Smith RA, Sutherland HG, Griffiths LR, "
+          },
+          "offset": 0,
+          "text": "Identification of Copy Number Variants as a Suspected Cause of Cerebral Small Vessel Disease.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "1",
+              "infons": {
+                "identifier": "MESH:D059345",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D059345"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D059345",
+                "biotype": "disease",
+                "name": "Cerebral Small Vessel Diseases",
+                "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+              },
+              "text": "Cerebral Small Vessel Disease",
+              "locations": [
+                {
+                  "offset": 63,
+                  "length": 29
+                }
+              ]
+            }
+          ],
+          "relations": []
+        },
+        {
+          "infons": {
+            "type": "abstract"
+          },
+          "offset": 94,
+          "text": "Cerebral small vessel disease (CSVD) describes a range of neurological diseases affecting the small arteries, veins, and capillaries which supply the white matter and deep grey matter structures of the brain. They are the most common form of cerebrovascular disease, accounting for almost half of vascular dementia cases and approximately 20% of stroke incidence globally. Genetic testing is a routine diagnostic tool for monogenic CSVDs; however, less than 20% of patients have a causal variant in a known gene. Genetic testing for these disorders focuses on single nucleotide variants and short insertions or deletions, with larger genomic variation often unexplored as a cause of disease. In this study we performed whole-exome sequencing (WES) on 111 patients suspected of familial CSVD that had previously tested negative for pathogenic variants in seven known CSVD genes (NOTCH3, HTRA1, COL4A1, COL4A2, TREX1, GLA, and FOXC1). Bioinformatic analysis of WES data, multiplex ligation-dependent probe amplification, quantitative real-time polymerase chain reaction assays, and Nanopore long-read sequencing were used to identify suspected copy number variants. This work identified four candidate CNVs across NOTCH3, LMNB1, and COL4A2 which are potential causes of CSVD and highlights the need for further investigation of more complex forms of genetic variation and their potential roles as causal of CSVD.",
+          "sentences": [],
+          "annotations": [
+            {
+              "id": "25",
+              "infons": {
+                "identifier": "MESH:D059345",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D059345"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D059345",
+                "biotype": "disease",
+                "name": "Cerebral Small Vessel Diseases",
+                "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+              },
+              "text": "Cerebral small vessel disease",
+              "locations": [
+                {
+                  "offset": 94,
+                  "length": 29
+                }
+              ]
+            },
+            {
+              "id": "26",
+              "infons": {
+                "identifier": "MESH:D059345",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D059345"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D059345",
+                "biotype": "disease",
+                "name": "Cerebral Small Vessel Diseases",
+                "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+              },
+              "text": "CSVD",
+              "locations": [
+                {
+                  "offset": 125,
+                  "length": 4
+                }
+              ]
+            },
+            {
+              "id": "27",
+              "infons": {
+                "identifier": "MESH:D020271",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D020271"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D020271",
+                "biotype": "disease",
+                "name": "Heredodegenerative Disorders Nervous System",
+                "accession": "@DISEASE_Heredodegenerative_Disorders_Nervous_System"
+              },
+              "text": "neurological diseases",
+              "locations": [
+                {
+                  "offset": 152,
+                  "length": 21
+                }
+              ]
+            },
+            {
+              "id": "28",
+              "infons": {
+                "identifier": "MESH:D002561",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D002561"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D002561",
+                "biotype": "disease",
+                "name": "Cerebrovascular Disorders",
+                "accession": "@DISEASE_Cerebrovascular_Disorders"
+              },
+              "text": "cerebrovascular disease",
+              "locations": [
+                {
+                  "offset": 336,
+                  "length": 23
+                }
+              ]
+            },
+            {
+              "id": "29",
+              "infons": {
+                "identifier": "MESH:D015140",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D015140"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D015140",
+                "biotype": "disease",
+                "name": "Dementia Vascular",
+                "accession": "@DISEASE_Dementia_Vascular"
+              },
+              "text": "vascular dementia",
+              "locations": [
+                {
+                  "offset": 391,
+                  "length": 17
+                }
+              ]
+            },
+            {
+              "id": "30",
+              "infons": {
+                "identifier": "MESH:D020521",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D020521"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D020521",
+                "biotype": "disease",
+                "name": "Stroke",
+                "accession": "@DISEASE_Stroke"
+              },
+              "text": "stroke",
+              "locations": [
+                {
+                  "offset": 440,
+                  "length": 6
+                }
+              ]
+            },
+            {
+              "id": "31",
+              "infons": {
+                "type": "Disease",
+                "valid": false,
+                "normalized_id": null,
+                "biotype": "disease"
+              },
+              "text": "CSVDs",
+              "locations": [
+                {
+                  "offset": 526,
+                  "length": 5
+                }
+              ]
+            },
+            {
+              "id": "32",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [
+                  9606
+                ],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [
+                {
+                  "offset": 559,
+                  "length": 8
+                }
+              ]
+            },
+            {
+              "id": "33",
+              "infons": {
+                "identifier": "9606",
+                "type": "Species",
+                "valid": true,
+                "normalized": [
+                  9606
+                ],
+                "database": "ncbi_taxonomy",
+                "normalized_id": 9606,
+                "biotype": "species",
+                "name": "9606",
+                "accession": null
+              },
+              "text": "patients",
+              "locations": [
+                {
+                  "offset": 849,
+                  "length": 8
+                }
+              ]
+            },
+            {
+              "id": "34",
+              "infons": {
+                "identifier": "MESH:D059345",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D059345"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D059345",
+                "biotype": "disease",
+                "name": "Cerebral Small Vessel Diseases",
+                "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+              },
+              "text": "CSVD",
+              "locations": [
+                {
+                  "offset": 880,
+                  "length": 4
+                }
+              ]
+            },
+            {
+              "id": "35",
+              "infons": {
+                "identifier": "MESH:D059345",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D059345"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D059345",
+                "biotype": "disease",
+                "name": "Cerebral Small Vessel Diseases",
+                "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+              },
+              "text": "CSVD",
+              "locations": [
+                {
+                  "offset": 960,
+                  "length": 4
+                }
+              ]
+            },
+            {
+              "id": "36",
+              "infons": {
+                "identifier": "4854",
+                "type": "Gene",
+                "ncbi_homologene": "376",
+                "valid": true,
+                "normalized": [
+                  4854
+                ],
+                "database": "ncbi_gene",
+                "normalized_id": 4854,
+                "biotype": "gene",
+                "name": "NOTCH3",
+                "accession": "@GENE_NOTCH3"
+              },
+              "text": "NOTCH3",
+              "locations": [
+                {
+                  "offset": 972,
+                  "length": 6
+                }
+              ]
+            },
+            {
+              "id": "37",
+              "infons": {
+                "identifier": "5654",
+                "type": "Gene",
+                "ncbi_homologene": "31114",
+                "valid": true,
+                "normalized": [
+                  5654
+                ],
+                "database": "ncbi_gene",
+                "normalized_id": 5654,
+                "biotype": "gene",
+                "name": "HTRA1",
+                "accession": "@GENE_HTRA1"
+              },
+              "text": "HTRA1",
+              "locations": [
+                {
+                  "offset": 980,
+                  "length": 5
+                }
+              ]
+            },
+            {
+              "id": "38",
+              "infons": {
+                "identifier": "1282",
+                "type": "Gene",
+                "ncbi_homologene": "20437",
+                "valid": true,
+                "normalized": [
+                  1282
+                ],
+                "database": "ncbi_gene",
+                "normalized_id": 1282,
+                "biotype": "gene",
+                "name": "COL4A1",
+                "accession": "@GENE_COL4A1"
+              },
+              "text": "COL4A1",
+              "locations": [
+                {
+                  "offset": 987,
+                  "length": 6
+                }
+              ]
+            },
+            {
+              "id": "39",
+              "infons": {
+                "identifier": "1284",
+                "type": "Gene",
+                "ncbi_homologene": "1390",
+                "valid": true,
+                "normalized": [
+                  1284
+                ],
+                "database": "ncbi_gene",
+                "normalized_id": 1284,
+                "biotype": "gene",
+                "name": "COL4A2",
+                "accession": "@GENE_COL4A2"
+              },
+              "text": "COL4A2",
+              "locations": [
+                {
+                  "offset": 995,
+                  "length": 6
+                }
+              ]
+            },
+            {
+              "id": "40",
+              "infons": {
+                "identifier": "11277",
+                "type": "Gene",
+                "ncbi_homologene": "7982",
+                "valid": true,
+                "normalized": [
+                  11277
+                ],
+                "database": "ncbi_gene",
+                "normalized_id": 11277,
+                "biotype": "gene",
+                "name": "TREX1",
+                "accession": "@GENE_TREX1"
+              },
+              "text": "TREX1",
+              "locations": [
+                {
+                  "offset": 1003,
+                  "length": 5
+                }
+              ]
+            },
+            {
+              "id": "41",
+              "infons": {
+                "identifier": "2717",
+                "type": "Gene",
+                "ncbi_homologene": "90852",
+                "valid": true,
+                "normalized": [
+                  2717
+                ],
+                "database": "ncbi_gene",
+                "normalized_id": 2717,
+                "biotype": "gene",
+                "name": "GLA",
+                "accession": "@GENE_GLA"
+              },
+              "text": "GLA",
+              "locations": [
+                {
+                  "offset": 1010,
+                  "length": 3
+                }
+              ]
+            },
+            {
+              "id": "42",
+              "infons": {
+                "identifier": "2296",
+                "type": "Gene",
+                "ncbi_homologene": "20373",
+                "valid": true,
+                "normalized": [
+                  2296
+                ],
+                "database": "ncbi_gene",
+                "normalized_id": 2296,
+                "biotype": "gene",
+                "name": "FOXC1",
+                "accession": "@GENE_FOXC1"
+              },
+              "text": "FOXC1",
+              "locations": [
+                {
+                  "offset": 1019,
+                  "length": 5
+                }
+              ]
+            },
+            {
+              "id": "43",
+              "infons": {
+                "identifier": "4854",
+                "type": "Gene",
+                "ncbi_homologene": "376",
+                "valid": true,
+                "normalized": [
+                  4854
+                ],
+                "database": "ncbi_gene",
+                "normalized_id": 4854,
+                "biotype": "gene",
+                "name": "NOTCH3",
+                "accession": "@GENE_NOTCH3"
+              },
+              "text": "NOTCH3",
+              "locations": [
+                {
+                  "offset": 1306,
+                  "length": 6
+                }
+              ]
+            },
+            {
+              "id": "44",
+              "infons": {
+                "identifier": "4001",
+                "type": "Gene",
+                "ncbi_homologene": "55912",
+                "valid": true,
+                "normalized": [
+                  4001
+                ],
+                "database": "ncbi_gene",
+                "normalized_id": 4001,
+                "biotype": "gene",
+                "name": "LMNB1",
+                "accession": "@GENE_LMNB1"
+              },
+              "text": "LMNB1",
+              "locations": [
+                {
+                  "offset": 1314,
+                  "length": 5
+                }
+              ]
+            },
+            {
+              "id": "45",
+              "infons": {
+                "identifier": "1284",
+                "type": "Gene",
+                "ncbi_homologene": "1390",
+                "valid": true,
+                "normalized": [
+                  1284
+                ],
+                "database": "ncbi_gene",
+                "normalized_id": 1284,
+                "biotype": "gene",
+                "name": "COL4A2",
+                "accession": "@GENE_COL4A2"
+              },
+              "text": "COL4A2",
+              "locations": [
+                {
+                  "offset": 1325,
+                  "length": 6
+                }
+              ]
+            },
+            {
+              "id": "46",
+              "infons": {
+                "identifier": "MESH:D059345",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D059345"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D059345",
+                "biotype": "disease",
+                "name": "Cerebral Small Vessel Diseases",
+                "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+              },
+              "text": "CSVD",
+              "locations": [
+                {
+                  "offset": 1362,
+                  "length": 4
+                }
+              ]
+            },
+            {
+              "id": "47",
+              "infons": {
+                "identifier": "MESH:D059345",
+                "type": "Disease",
+                "valid": true,
+                "normalized": [
+                  "D059345"
+                ],
+                "database": "ncbi_mesh",
+                "normalized_id": "D059345",
+                "biotype": "disease",
+                "name": "Cerebral Small Vessel Diseases",
+                "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+              },
+              "text": "CSVD",
+              "locations": [
+                {
+                  "offset": 1499,
+                  "length": 4
+                }
+              ]
+            }
+          ],
+          "relations": []
+        }
+      ],
+      "relations": [
+        {
+          "id": "R1",
+          "infons": {
+            "score": "0.9996",
+            "role1": {
+              "identifier": "MESH:D059345",
+              "type": "Disease",
+              "valid": true,
+              "normalized": [
+                "D059345"
+              ],
+              "database": "ncbi_mesh",
+              "normalized_id": "D059345",
+              "biotype": "disease",
+              "name": "Cerebral Small Vessel Diseases",
+              "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+            },
+            "role2": {
+              "identifier": "4854",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [
+                4854
+              ],
+              "database": "ncbi_gene",
+              "normalized_id": 4854,
+              "biotype": "gene",
+              "name": "NOTCH3",
+              "accession": "@GENE_NOTCH3"
+            },
+            "type": "Association"
+          },
+          "nodes": [
+            {
+              "refid": "0",
+              "role": "23,19"
+            }
+          ]
+        },
+        {
+          "id": "R2",
+          "infons": {
+            "score": "0.9911",
+            "role1": {
+              "identifier": "MESH:D059345",
+              "type": "Disease",
+              "valid": true,
+              "normalized": [
+                "D059345"
+              ],
+              "database": "ncbi_mesh",
+              "normalized_id": "D059345",
+              "biotype": "disease",
+              "name": "Cerebral Small Vessel Diseases",
+              "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+            },
+            "role2": {
+              "identifier": "2296",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [
+                2296
+              ],
+              "database": "ncbi_gene",
+              "normalized_id": 2296,
+              "biotype": "gene",
+              "name": "FOXC1",
+              "accession": "@GENE_FOXC1"
+            },
+            "type": "Association"
+          },
+          "nodes": [
+            {
+              "refid": "1",
+              "role": "23,18"
+            }
+          ]
+        },
+        {
+          "id": "R3",
+          "infons": {
+            "score": "0.9983",
+            "role1": {
+              "identifier": "MESH:D059345",
+              "type": "Disease",
+              "valid": true,
+              "normalized": [
+                "D059345"
+              ],
+              "database": "ncbi_mesh",
+              "normalized_id": "D059345",
+              "biotype": "disease",
+              "name": "Cerebral Small Vessel Diseases",
+              "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+            },
+            "role2": {
+              "identifier": "4001",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [
+                4001
+              ],
+              "database": "ncbi_gene",
+              "normalized_id": 4001,
+              "biotype": "gene",
+              "name": "LMNB1",
+              "accession": "@GENE_LMNB1"
+            },
+            "type": "Association"
+          },
+          "nodes": [
+            {
+              "refid": "2",
+              "role": "23,20"
+            }
+          ]
+        },
+        {
+          "id": "R4",
+          "infons": {
+            "score": "0.7628",
+            "role1": {
+              "identifier": "MESH:D059345",
+              "type": "Disease",
+              "valid": true,
+              "normalized": [
+                "D059345"
+              ],
+              "database": "ncbi_mesh",
+              "normalized_id": "D059345",
+              "biotype": "disease",
+              "name": "Cerebral Small Vessel Diseases",
+              "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+            },
+            "role2": {
+              "identifier": "1282",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [
+                1282
+              ],
+              "database": "ncbi_gene",
+              "normalized_id": 1282,
+              "biotype": "gene",
+              "name": "COL4A1",
+              "accession": "@GENE_COL4A1"
+            },
+            "type": "Association"
+          },
+          "nodes": [
+            {
+              "refid": "3",
+              "role": "23,14"
+            }
+          ]
+        },
+        {
+          "id": "R5",
+          "infons": {
+            "score": "0.9373",
+            "role1": {
+              "identifier": "MESH:D059345",
+              "type": "Disease",
+              "valid": true,
+              "normalized": [
+                "D059345"
+              ],
+              "database": "ncbi_mesh",
+              "normalized_id": "D059345",
+              "biotype": "disease",
+              "name": "Cerebral Small Vessel Diseases",
+              "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+            },
+            "role2": {
+              "identifier": "2717",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [
+                2717
+              ],
+              "database": "ncbi_gene",
+              "normalized_id": 2717,
+              "biotype": "gene",
+              "name": "GLA",
+              "accession": "@GENE_GLA"
+            },
+            "type": "Association"
+          },
+          "nodes": [
+            {
+              "refid": "4",
+              "role": "23,17"
+            }
+          ]
+        },
+        {
+          "id": "R6",
+          "infons": {
+            "score": "0.9996",
+            "role1": {
+              "identifier": "MESH:D059345",
+              "type": "Disease",
+              "valid": true,
+              "normalized": [
+                "D059345"
+              ],
+              "database": "ncbi_mesh",
+              "normalized_id": "D059345",
+              "biotype": "disease",
+              "name": "Cerebral Small Vessel Diseases",
+              "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+            },
+            "role2": {
+              "identifier": "1284",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [
+                1284
+              ],
+              "database": "ncbi_gene",
+              "normalized_id": 1284,
+              "biotype": "gene",
+              "name": "COL4A2",
+              "accession": "@GENE_COL4A2"
+            },
+            "type": "Association"
+          },
+          "nodes": [
+            {
+              "refid": "5",
+              "role": "23,21"
+            }
+          ]
+        },
+        {
+          "id": "R7",
+          "infons": {
+            "score": "0.5343",
+            "role1": {
+              "identifier": "MESH:D059345",
+              "type": "Disease",
+              "valid": true,
+              "normalized": [
+                "D059345"
+              ],
+              "database": "ncbi_mesh",
+              "normalized_id": "D059345",
+              "biotype": "disease",
+              "name": "Cerebral Small Vessel Diseases",
+              "accession": "@DISEASE_Cerebral_Small_Vessel_Diseases"
+            },
+            "role2": {
+              "identifier": "11277",
+              "type": "Gene",
+              "valid": true,
+              "normalized": [
+                11277
+              ],
+              "database": "ncbi_gene",
+              "normalized_id": 11277,
+              "biotype": "gene",
+              "name": "TREX1",
+              "accession": "@GENE_TREX1"
+            },
+            "type": "Association"
+          },
+          "nodes": [
+            {
+              "refid": "6",
+              "role": "23,16"
+            }
+          ]
+        }
+      ],
+      "pmid": 42661427,
+      "pmcid": null,
+      "meta": {},
+      "date": "2026-08-27T00:00:00Z",
+      "journal": "Clin Genet",
+      "authors": [
+        "Guyler SK",
+        "Maksemous N",
+        "Lea RA",
+        "Smith RA",
+        "Sutherland HG",
+        "Griffiths LR"
+      ],
+      "relations_display": [
+        {
+          "name": "associate|@DISEASE_Cerebral_Small_Vessel_Diseases|@GENE_NOTCH3"
+        },
+        {
+          "name": "associate|@DISEASE_Cerebral_Small_Vessel_Diseases|@GENE_FOXC1"
+        },
+        {
+          "name": "associate|@DISEASE_Cerebral_Small_Vessel_Diseases|@GENE_LMNB1"
+        },
+        {
+          "name": "associate|@DISEASE_Cerebral_Small_Vessel_Diseases|@GENE_COL4A1"
+        },
+        {
+          "name": "associate|@DISEASE_Cerebral_Small_Vessel_Diseases|@GENE_GLA"
+        },
+        {
+          "name": "associate|@DISEASE_Cerebral_Small_Vessel_Diseases|@GENE_COL4A2"
+        },
+        {
+          "name": "associate|@DISEASE_Cerebral_Small_Vessel_Diseases|@GENE_TREX1"
+        }
+      ]
+    }
+  ]
+}
