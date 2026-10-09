@@ -1,5 +1,5 @@
 [project]
-name = "gene_harmony_analysis"
+name = "gene_jar_analysis"
 authors = [
     {name = "Anastasia Bratulin", email = "anastasia.bratulin@nationwidechildrens.org"},
 ]
