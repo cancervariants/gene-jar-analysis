@@ -131,6 +131,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.venv-1
 env/
 venv/
 ENV/
@@ -180,16 +181,11 @@ input/ncbi_gene_history20251006
 input/dbxref.README
 input/dbxref20251213.tab
 
-#files too big, from interpro category work
-output/inprogress.json
-input/idmapping20251015.dat
-
 #files too big gene ID symbol work
 input/gene2ensembl20251007
 input/gene2vega20251007
 input/hgnc_associated_ids20250926.txt
 input/gene2accession20251007
-output/ncbi_to_uniprot_df.csv
 
 #files too big gene neighbors work
 input/gene_neighbors20251007
@@ -201,15 +197,11 @@ input/gene_group20251007
 input/interactions20251007
 
 #files too big alt symbol work
-input/gene2pubtator3
 output/alt_pub_symbol_analysis_df.h5
 output/alt_pub_symbol_match_subset_genes_df.h5
 
 #files for expired mouse symbols
 input/MGI_EntrezGene.rpt.txt
-
-#I don't think I've used this yet but i dont want to download again
-gene2go20251007
 
 #This makes an environment variable for my email
 .env
